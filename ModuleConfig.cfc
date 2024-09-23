@@ -3,16 +3,16 @@
  */
 component {
 
-    this['moduleMapping'] = 'boxlangcompat'; // cflint ignore:line
-    this['modelNamespace'] = 'boxlangcompat'; // cflint ignore:line
-    this['cfmapping'] = 'boxlangcompat'; // cflint ignore:line
+	this[ "moduleMapping" ]  = "boxlangcompat"; // cflint ignore:line
+	this[ "modelNamespace" ] = "boxlangcompat"; // cflint ignore:line
+	this[ "cfmapping" ]      = "boxlangcompat"; // cflint ignore:line
 
-    /**
-     * The minimum functions needed to run ModuleConfig
-     */
-    void function configure() {
-    }
-    /*
+	/**
+	 * The minimum functions needed to run ModuleConfig
+	 */
+	void function configure(){
+	}
+	/*
     function onLoad(){
     }
 

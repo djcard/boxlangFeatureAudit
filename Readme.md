@@ -5,7 +5,7 @@ The Boxlang Feature Audit module puts a CommandBox module around the built in Bo
 ## Installation
 
 1. Install Boxlang according to the directions [here](https://boxlang.ortusbooks.com/getting-started/installation)
-2. Run `install boxlangcompat` from CommandBox
+2. Run `install commandbox-BoxLangCompat` from CommandBox
 
 
 ## Usage

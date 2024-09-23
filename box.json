@@ -6,17 +6,17 @@
     "directory":"",
     "createPackageDirectory":true,
     "packageDirectory":"",
-    "homepage":"",
-    "documentation":"",
+    "homepage":"https://github.com/djcard/boxlangCompat",
+    "documentation":"https://github.com/djcard/boxlangCompat",
     "repository":{
-        "type":"",
-        "URL":""
+        "type":"github",
+        "URL":"https://github.com/djcard/boxlangCompat"
     },
-    "bugs":"",
+    "bugs":"https://github.com/djcard/boxlangCompat/issues",
     "slug":"commandbox-BoxLangCompat",
-    "shortDescription":"",
-    "description":"",
-    "instructions":"",
+    "shortDescription":"A CommandBox wrapper for the Boxlang Feature Audit tool",
+    "description":"A CommandBox wrapper for the Boxlang Feature Audit tool",
+    "instructions":"Install Boxlang and then install ",
     "changelog":"",
     "type":"commandbox-modules",
     "keywords":[],
@@ -32,8 +32,8 @@
     "projectURL":"",
     "license":[
         {
-            "type":"",
-            "URL":""
+            "type":"Apache v2.0",
+            "URL":"http://www.apache.org/licenses/LICENSE-2.0"
         }
     ],
     "contributors":[],
@@ -49,14 +49,15 @@
     "testbox":{
         "runner":[
             {
-                "default":""
+                "default":"/tests/runner.cfm?bundlesPattern="
             }
         ],
         "labels":[],
         "reporter":"",
         "reporterResults":"",
         "bundles":[
-            ""
+            "tests.specs.commands.BoxlangFeatureAudit",
+            "tests.specs.models.core"
         ],
         "directory":{
             "mapping":"",
@@ -67,6 +68,7 @@
             "emails":[],
             "growl":"",
             "URL":""
-        }
+        },
+        "bundlesPattern":""
     }
 }

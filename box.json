@@ -1,6 +1,6 @@
 {
-    "name":"Commandbox-BoxLangCompat",
-    "version":"0.0.1",
+    "name":"Commandbox-BoxLangFeatureAudit@dcar7191",
+    "version":"0.0.2",
     "author":"",
     "location":"forgeboxStorage",
     "directory":"",
@@ -13,14 +13,14 @@
         "URL":"https://github.com/djcard/boxlangCompat"
     },
     "bugs":"https://github.com/djcard/boxlangCompat/issues",
-    "slug":"commandbox-BoxLangFeatureAudit",
+    "slug":"commandbox-BoxLangFeatureAudit@dcar7191",
     "shortDescription":"A CommandBox wrapper for the Boxlang Feature Audit tool",
     "description":"A CommandBox wrapper for the Boxlang Feature Audit tool",
     "instructions":"Install Boxlang and then install ",
     "changelog":"",
     "type":"commandbox-modules",
     "keywords":[],
-    "private":false,
+    "private":true,
     "engines":[
         {
             "type":"",

@@ -20,7 +20,7 @@
     "changelog":"",
     "type":"commandbox-modules",
     "keywords":[],
-    "private":true,
+    "private":false,
     "engines":[
         {
             "type":"",

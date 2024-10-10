@@ -27,6 +27,7 @@ When installing Boxlang, the installer sets the BOX_LANG environmental variable 
 
 ## Changelog
 
-0.0.3 - expanded findBoxLang() to find updated versions of boxlang in the BOXLANG_HOME\lib folder and declared datatypes in the audit command to allow `--` syntax
+0.0.5 - updated github URLs in box.json to <https://github.com/djcard/boxlangFeatureAudit>
+0.0.4 - expanded findBoxLang() to find updated versions of boxlang in the BOXLANG_HOME\lib folder and declared datatypes in the audit command to allow `--` syntax
 0.0.2 - expanded findBoxLang() to look for boxlang-home in addition to BOXLANG_HOME
 0.0.1 - initial release

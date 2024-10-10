@@ -1,19 +1,19 @@
 {
-    "name":"Commandbox-BoxLangFeatureAudit@dcar7191",
-    "version":"0.0.4",
+    "name":"Commandbox-BoxLangFeatureAudit",
+    "version":"0.0.5",
     "author":"",
     "location":"forgeboxStorage",
     "directory":"",
     "createPackageDirectory":true,
     "packageDirectory":"",
-    "homepage":"https://github.com/djcard/boxlangCompat",
-    "documentation":"https://github.com/djcard/boxlangCompat",
+    "homepage":"https://github.com/djcard/boxlangFeatureAudit",
+    "documentation":"https://github.com/djcard/boxlangFeatureAudit",
     "repository":{
         "type":"github",
-        "URL":"https://github.com/djcard/boxlangCompat"
+        "URL":"https://github.com/djcard/boxlangFeatureAudit"
     },
-    "bugs":"https://github.com/djcard/boxlangCompat/issues",
-    "slug":"commandbox-BoxLangFeatureAudit@dcar7191",
+    "bugs":"https://github.com/djcard/boxlangFeatureAudit/issues",
+    "slug":"commandbox-BoxLangFeatureAudit",
     "shortDescription":"A CommandBox wrapper for the Boxlang Feature Audit tool",
     "description":"A CommandBox wrapper for the Boxlang Feature Audit tool",
     "instructions":"Install Boxlang and then install ",

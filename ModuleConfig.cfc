@@ -3,9 +3,9 @@
  */
 component {
 
-	this[ "moduleMapping" ]  = "boxlangcompat"; // cflint ignore:line
-	this[ "modelNamespace" ] = "boxlangcompat"; // cflint ignore:line
-	this[ "cfmapping" ]      = "boxlangcompat"; // cflint ignore:line
+	this[ "moduleMapping" ]  = "boxlangFeatureAudit"; // cflint ignore:line
+	this[ "modelNamespace" ] = "boxlangFeatureAudit"; // cflint ignore:line
+	this[ "cfmapping" ]      = "boxlangFeatureAudit"; // cflint ignore:line
 
 	/**
 	 * The minimum functions needed to run ModuleConfig

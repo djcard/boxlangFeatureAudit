@@ -7,10 +7,9 @@ The Boxlang Feature Audit module puts a CommandBox module around the built in Bo
 1. Install Boxlang according to the directions [here](https://boxlang.ortusbooks.com/getting-started/installation)
 2. Run `install commandbox-BoxLangCompat` from CommandBox
 
-
 ## Usage
 
-When installing Boxlang, the installer sets the BOX_LANG environmental variable which is key to using this module. 
+When installing Boxlang, the installer sets the BOX_LANG environmental variable which is key to using this module.
 
 `BoxlangFeatureAudit audit <options>`
 
@@ -25,3 +24,9 @@ When installing Boxlang, the installer sets the BOX_LANG environmental variable 
 @summarize - Defaults to false. If true, will provide a summary of the aggregate. If both aggregate and summary are true, summary takes precendence.
 
 @quiet - Defaults to false. If true, only the filenames being processed will appear in the console, not the details found.
+
+## Changelog
+
+0.0.3 - expanded findBoxLang() to find updated versions of boxlang in the BOXLANG_HOME\lib folder and declared datatypes in the audit command to allow `--` syntax
+0.0.2 - expanded findBoxLang() to look for boxlang-home in addition to BOXLANG_HOME
+0.0.1 - initial release

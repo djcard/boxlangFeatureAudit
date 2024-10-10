@@ -35,6 +35,7 @@ component extends="testbox.system.BaseSpec" {
 				testObjA   = new root.commands.BoxlangFeatureAudit.audit();
 				testObj    = createMock( object = testObjA );
 				testObj.$( method = "getCwd", returns = fakeCWD );
+				mockCore.$( method="doesFileExist",returns=true);
 				testObj.setCore( mockCore );
 				testObj.setPrint( fakePrint );
 			} )
@@ -44,7 +45,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 2 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --source #fakeCWD#" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --source #fakeCWD#" );
 			} );
 
 			it( "When a source is submitted, call getCWD 0x and use the submitted source file. ", function(){
@@ -53,7 +54,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 1 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --source #fakepath#" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --source #fakepath#" );
 			} );
 			it( "When missing is true, include --missing in the command ", function(){
 				testObj.run( missing = true );
@@ -61,7 +62,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 2 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --missing --source #fakeCWD#" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --missing --source #fakeCWD#" );
 			} );
 			it( "When aggregate is true, include --aggregate but not summary in the command ", function(){
 				testObj.run( aggregate = true );
@@ -69,7 +70,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 2 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --aggregate" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --aggregate" );
 			} );
 
 			it( "When summarize is true, include --aggregate summary in the command ", function(){
@@ -78,7 +79,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 2 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --aggregate summary" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --aggregate summary" );
 			} );
 
 			it( "When both aggregate and summarize are  true, include --aggregate summary in the command ", function(){
@@ -87,7 +88,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 2 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --aggregate summary" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --aggregate summary" );
 			} );
 
 
@@ -97,7 +98,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 2 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --quiet" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --quiet" );
 			} );
 
 			it( "When reportFile is not submitted, do not include it in the command ", function(){
@@ -106,7 +107,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 2 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --source #fakeCWD#" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --source #fakeCWD#" );
 			} );
 
 			it( "When reportFile is submitted, include it in the command ", function(){
@@ -115,7 +116,7 @@ component extends="testbox.system.BaseSpec" {
 				expect( testObj.$callLog()[ "getCWD" ].len() ).tobe( 2 );
 				expect( mockCore.$callLog() ).toHaveKey( "runCommand" );
 				expect( mockCore.$callLog()[ "runCommand" ].len() ).tobe( 1 );
-				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath##sep#lib#sep#boxlang-1.0.0-beta13-all.jar ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --reportFile #fakeReport#" );
+				expect( mockCore.$callLog()[ "runCommand" ][ 1 ][ 1 ] ).tobe( "!java -cp #fakepath# ortus.boxlang.compiler.FeatureAudit --source #fakeCWD# --reportFile #fakeReport#" );
 			} );
 		} );
 	}

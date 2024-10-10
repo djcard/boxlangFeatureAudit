@@ -19,6 +19,7 @@ component extends="testbox.system.BaseSpec" {
 		// all your suites go here.
 		describe( "findBoxlang", function(){
 			beforeEach( () => {
+				
 				fakePath    = mockData( $num = 1, $type = "words:1" )[ 1 ];
 				fakeCommand = createStub();
 				fakeCommand.$( method = "runCommandline" );

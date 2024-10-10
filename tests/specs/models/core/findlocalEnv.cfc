@@ -25,6 +25,7 @@ component extends="testbox.system.BaseSpec" {
 				fakeCore = new root.models.core();
 				testObj  = createMock( object = fakeCore );
 				testObj.setCommand( fakeCommand );
+				testObj.$(method="doesFileExist",returns=true);
 			} )
 			it( "When the BOX_LANG property is not set in the local .env file, return a blank string ", function(){
 				var testme = testObj.findlocalEnv( expandPath( "/" ) );

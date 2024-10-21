@@ -1,11 +1,10 @@
 component accessors="true" {
 
 	property name="command" inject="CommandService";
-	//property name="print" inject="PrintBuffer";
+	property name="print" inject="PrintBuffer";
 
 	function findBoxLang( currentDirectory ){
 		var system   = createObject( "java", "java.lang.System" ).getenv();
-		
 		var sep = server.separator.file.replace("\\","\","all");
 		var localenv = findlocalENV( currentDirectory );
 		var boxSource =  system.keyExists( "BOXLANG_HOME" )
@@ -14,14 +13,17 @@ component accessors="true" {
 		 	? system["boxlang-home"]
 		 	: !isNull( localenv ) && localenv.len()
 				? localenv
-				: ""
+				: server.os.name=='Linux'
+                    ? "/usr/local"
+                    : "";
 
 		var fileName = filterFile(boxSource);
 		return filename;	
 	}
 
 	function filterFile(dir){
-		var found = directoryList(dir&"\lib").filter((item)=>{
+		var sep = server.separator.file.replace("\\","\","all");
+		var found = directoryList(dir& sep & "lib").filter((item)=>{
 			return item.findNoCase("boxlang-") && item.findNoCase("-all.jar");
 		});
 

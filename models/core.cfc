@@ -24,7 +24,7 @@ component accessors="true" {
 	function filterFile(dir){
 		var sep = server.separator.file.replace("\\","\","all");
 		var found = directoryList(dir& sep & "lib").filter((item)=>{
-			return item.findNoCase("boxlang-") && item.findNoCase("-all.jar");
+			return item.findNoCase("boxlang-miniserver") && item.findNoCase("-all.jar");
 		});
 
 		return found.len() ? found[1] : "";

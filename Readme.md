@@ -27,6 +27,8 @@ When installing Boxlang, the installer sets the BOX_LANG environmental variable 
 
 ## Changelog
 
+0.0.10 - Updated how Boxlang was found on the system and changed to running `boxlang featureAudit` rather than the jar directly
+
 0.0.9 - Changed to use boxlang-miniserver...jar instead of the base boxlang...jar
 
 0.0.8 - formatting in Readme improved

@@ -7,7 +7,7 @@ component accessors="true" {
 		var system   = createObject( "java", "java.lang.System" ).getenv();
 		var sep = server.separator.file.replace("\\","\","all");
 		var localenv = findlocalENV( currentDirectory );
-		var boxSource =  system.keyExists( "BOXLANG_HOME" )
+		return  system.keyExists( "BOXLANG_HOME" )
 		 ? system.BOXLANG_HOME			
 		 : system.keyExists("boxlang-home")
 		 	? system["boxlang-home"]
@@ -16,15 +16,14 @@ component accessors="true" {
 				: server.os.name=='Linux'
                     ? "/usr/local"
                     : "";
-
-		var fileName = filterFile(boxSource);
-		return filename;	
+		//var fileName = filterFile(boxSource);
+		//return filename;	
 	}
 
 	function filterFile(dir){
 		var sep = server.separator.file.replace("\\","\","all");
-		var found = directoryList(dir& sep & "lib").filter((item)=>{
-			return item.findNoCase("boxlang-miniserver") && item.findNoCase("-all.jar");
+		var found = directoryList(path=dir,recurse=false,listinfo="path",type="file").filter((item)=>{
+			return item.findNoCase("boxlang");
 		});
 
 		return found.len() ? found[1] : "";

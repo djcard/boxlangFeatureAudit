@@ -19,18 +19,20 @@ component accessors="true" {
 		boolean summarize  = false,
 		boolean quiet      = false
 	){
+
 		var boxlocation = core.findBoxLang( getCwd() );
 		if ( !boxlocation.len() ) {
 			print.line( "Boxlang is not installed. Please install or make sure that the BOXLANG_HOME variable is set." )
 			return;
 		}
 
-		if ( !core.doesFileExist( boxlocation ) ) {
-			print.line( "It doesn't appear that Boxlang is installed at #boxlocation#. Please check the system variable BOXLANG_HOME." );
-			return;
-		}
+		//if ( !core.doesFileExist( boxlocation ) ) {
+		//	print.line( "It doesn't appear that Boxlang is installed at #boxlocation#. Please check the system variable BOXLANG_HOME." );
+		//	return;
+		//}
 
-		var base = "!java -cp #boxlocation# ortus.boxlang.compiler.FeatureAudit";
+		//var base = "!java -cp #boxlocation# ortus.boxlang.compiler.FeatureAudit";
+		var base = "!boxlang featureAudit";
 		base     = base & ( arguments.missing ? " --missing" : "" );
 		base     = base & ( arguments.source.len() ? " --source #arguments.source#" : "" );
 		base     = base & (
